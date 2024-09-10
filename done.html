@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Technique</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .finishbtnImg {
+            background-image: url(./images/check.png);
+        }
+
+
+        .finishLabel {
+            color: #555;
+            text-decoration: line-through;
+        }
+
+        .listItem {
+            background-color: #f5f4f1;
+            margin: 15px 80px;
+
+        }
+
+        .itemBox {
+            display: none;
+        }
+
+        @media (max-width: 1200px) {
+            #finishedTasksList {
+                margin-left: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <img src="./images/menu.png" alt="navIcon" class="navIcon" id="navIcon">
+            <ul class="defaultClass">
+                <li class="connect plan"><img class="planImg liImg" src="./images/check-list.png"
+                        alt="checkListImage"><a href="index.html">任務計畫</a></li>
+                <li class="connect done active"><img class="doneImg liImg" src="./images/check-mark.png"
+                        alt="doneImg"><a href="done.html">已完成</a>
+                </li>
+                <li class="connect clock "><img class="clockImg liImg" src="./images/clock.png" alt="clockImg"><a
+                        href="pomodoro.html">番茄鐘</a></li>
+            </ul>
+        </nav>
+        <div class="rightSide">
+            <h2 class="titleList">已完成</h2>
+            <div class="noTaskSection"><img class="noTaskimg" src="./images/requirement.png" alt="addTaskImg">
+                <p>尚未有完成的任務，快點去完成吧</p>
+            </div>
+            <div id="finishedTasksList"></div>
+
+        </div>
+    </div>
+    <script>
+        const nav = document.querySelector("nav");
+        const navIcon = document.querySelector(".navIcon");
+        const rightSide = document.querySelector(".rightSide");
+        const noTaskingSection = document.querySelector(".noTaskSection");
+
+        navIcon.addEventListener("click", function () {
+            nav.classList.toggle("hid");
+            navIcon.classList.toggle("navIcon");
+            navIcon.classList.toggle("navIconMove");
+            rightSide.classList.toggle("shifted");
+        });
+
+
+
+        loadFinishedTasks()
+        function loadFinishedTasks() {
+            const finishedTasksList = document.getElementById("finishedTasksList");
+            const getFinishList = localStorage.getItem("finishList");
+            if (getFinishList) {
+                const finishedListContainer = document.createElement("div");
+                finishedListContainer.innerHTML = getFinishList;
+                while (finishedListContainer.firstChild) {
+                    finishedTasksList.appendChild(finishedListContainer.firstChild);
+                }
+                noTaskingSection.classList.add('hidden');
+            } else {
+                noTaskingSection.classList.remove('hidden');
+
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

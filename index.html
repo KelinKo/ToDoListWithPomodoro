@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Technique</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <img src="./images/menu.png" alt="navIcon" class="navIcon" id="navIcon">
+            <ul class="defaultClass">
+                <li class="connect plan active "><img class="planImg liImg" src="./images/check-list.png"
+                        alt="checkListImage"><a href="index.html">任務計畫</a></li>
+                <li class="connect done"><img class="doneImg liImg" src="./images/check-mark.png" alt="doneImg"><a
+                        href="done.html">已完成</a>
+                </li>
+                <li class="connect clock"><img class="clockImg liImg" src="./images/clock.png" alt="clockImg"><a
+                        href="pomodoro.html">番茄鐘</a></li>
+            </ul>
+        </nav>
+
+        <div class="rightSide">
+            <h2 class="titleList">任務計畫</h2>
+            <!-- 到期任務 -->
+            <div class="main-container">
+                <section class="taskExpired hidden">
+                    <h3><span class="expire-date">到期</span>
+                        <span class="expire-count">0</span>
+                    </h3>
+                    <div class="listSection">
+                        <div class="expired-list">
+                            <div class="listData">
+                                <div class="list">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="today-Container">
+                    <div class="addplan">
+                        <div class="today">
+                            <h3><span class="today-date">30日</span><span>．今天</span><span class="today-count">0</span>
+                            </h3>
+                            <div class="inputData">
+                                <input type="text" class="inputTask" maxlength="100"
+                                    placeholder="新增任務，按「enter」鍵保存,點擊番茄鐘設定預計時間">
+                                <div class="alarms">
+                                    <input type="checkbox" id="checkAlarm1" class="hidden">
+                                    <input type="checkbox" id="checkAlarm2" class="hidden">
+                                    <input type="checkbox" id="checkAlarm3" class="hidden">
+                                    <input type="checkbox" id="checkAlarm4" class="hidden">
+                                    <input type="checkbox" id="checkAlarm5" class="hidden">
+                                    <label for="checkAlarm1" class="alarm1"></label>
+                                    <label for="checkAlarm2" class="alarm2"></label>
+                                    <label for="checkAlarm3" class="alarm3"></label>
+                                    <label for="checkAlarm4" class="alarm4"></label>
+                                    <label for="checkAlarm5" class="alarm5"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listSection">
+                        <div class="today-list">
+                            <p class="hint1 hidden">點擊下方的番茄鐘即進入番茄鐘頁面，開始專注時刻</p>
+                            <div class="listData">
+                                <div class="list">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 明日任務 -->
+                <section class="tomorrow-Container">
+                    <div class="addplan">
+                        <div class="tomorrow">
+                            <h3><span class="tomorrow-date">31日</span><span>．明天</span>
+                                <span class="tomorrow-count">0</span>
+                            </h3>
+                            <div class="inputData">
+                                <input type="text" class="inputTask" maxlength="40"
+                                    placeholder="新增任務，按「enter」鍵保存,點擊番茄鐘設定預計時間">
+                                <div class="alarms">
+                                    <input type="checkbox" id="checkAlarm6" class="hidden">
+                                    <input type="checkbox" id="checkAlarm7" class="hidden">
+                                    <input type="checkbox" id="checkAlarm8" class="hidden">
+                                    <input type="checkbox" id="checkAlarm9" class="hidden">
+                                    <input type="checkbox" id="checkAlarm10" class="hidden">
+                                    <label for="checkAlarm6" class="alarm6"></label>
+                                    <label for="checkAlarm7" class="alarm7"></label>
+                                    <label for="checkAlarm8" class="alarm8"></label>
+                                    <label for="checkAlarm9" class="alarm9"></label>
+                                    <label for="checkAlarm10" class="alarm10"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listSection">
+                        <div class="tomorrow-list">
+                            <p class="hint2 hidden">點擊下方的番茄鐘即進入番茄鐘頁面，開始專注時刻</p>
+                            <div class="listData">
+                                <div class="list">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="finishList hidden ">
+    </div>
+    <audio class="deleteMusic hidden" controls src="./deleteMusic.mp3"></audio>
+
+    <script src="index.js">
+    </script>
+</body>
+
+</html>

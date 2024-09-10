@@ -1,0 +1,136 @@
+.title {
+    color: black;
+}
+
+
+
+.titleList {
+    color: #1d1c1c;
+    display: flex;
+    justify-content: space-between
+}
+
+.timeClick {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    color: rgb(0, 0, 0);
+}
+
+.btnSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.chooseSection {
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn {
+    width: 120px;
+    border-radius: 20px;
+    padding: 5px;
+    border: none;
+    background-color: #f5f4f1;
+    color: #313d44;
+
+}
+
+.btnChoose {
+    width: 15%;
+    min-width: 173px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    /* background-color: rgba(0, 0, 0, 0.699); */
+    background-color: #00668c;
+    color: #ffffff;
+}
+
+.btnFocus {
+    width: 120px;
+}
+
+.btnFocus::before {
+    content: '▶️';
+    margin-right: 10px;
+}
+
+.btnPause::before {
+    content: '⏸️';
+    margin-right: 10px;
+}
+
+.btnStop::before {
+    content: '⏹️';
+    margin-right: 10px;
+}
+
+.btnSession {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.btnStop,
+.btnRest {
+    margin-left: 20px;
+}
+
+.btnRest::before {
+    content: '💤';
+    margin-right: 10px;
+}
+
+.currentTaskTitle {
+    color: white;
+    text-align: center;
+}
+
+.listItem {
+    width: 40%;
+    background: #ffffff;
+}
+
+.btnMusic {
+    width: 30px;
+    background: transparent;
+    border-width: 0px;
+    outline: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: end;
+
+}
+
+.btnMusic img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+
+}
+
+.musicBox {
+    display: flex;
+    /* margin-top: 1rem; */
+}
+
+
+.task {
+    width: 60%;
+    margin: 10px auto;
+
+}
+
+.itemBox {
+    display: none;
+}

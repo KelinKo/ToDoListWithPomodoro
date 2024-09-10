@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Technique</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pomodoro.css">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <nav>
+            <img src="./images/menu.png" alt="navIcon" class="navIcon" id="navIcon">
+            <ul class="defaultClass">
+                <li class="connect plan"><img class="planImg liImg" src="./images/check-list.png"
+                        alt="checkListImage"><a href="index.html">任務計畫</a></li>
+                <li class="connect done"><img class="doneImg liImg" src="./images/check-mark.png" alt="doneImg"><a
+                        href="done.html">已完成</a>
+                </li>
+                <li class="connect clock active"><img class="clockImg liImg" src="./images/clock.png" alt="clockImg"><a
+                        href="pomodoro.html">番茄鐘</a></li>
+            </ul>
+        </nav>
+        <div class="rightSide">
+            <h2 class="titleList">
+                番茄鐘
+                <div class="musicBox">
+                    <button class="btnMusic">
+                        <span>
+                            <img src="./images/musical-noteBlack.png" alt="">
+                        </span>
+                    </button>
+                </div>
+            </h2>
+
+            <div class="chooseSection">
+                <button class="btn btnChoose">請選擇當前任務</button>
+            </div>
+
+            <h3 class="currentTaskTitle hidden">當前任務</h3>
+            <div class="task"></div>
+            <div class="timeClick">
+                <div class="m">25:</div>
+                <div class="s">00</div>
+            </div>
+            <div class="btnSection">
+                <button class="btn btnFocus">開始專注</button>
+                <button class="btn btnRest">休息</button>
+                <button class="btn btnPause hidden">暫停</button>
+                <button class="btn btnStop hidden">停止</button>
+            </div>
+
+            <audio class="audioPlay hidden" controls src="./Lofi Analog-dreams.mp3"></audio>
+            <audio class="deleteMusic hidden" controls src="./deleteMusic.mp3"></audio>
+
+        </div>
+    </div>
+    <div class="finishList hidden"></div>
+    <script src="pomodoro.js">
+    </script>
+</body>
+
+</html>

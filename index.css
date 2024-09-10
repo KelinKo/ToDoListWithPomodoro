@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+.active {
+    font-weight: bold;
+    background-color: #96d4f3;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #d4eaf7;
+    background-size: cover;
+    width: 300px;
+    min-width: 250px;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    transition: left 0.5s ease;
+}
+
+
+
+nav.hid {
+    left: -300px;
+
+}
+
+.navIcon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 28px;
+    margin-bottom: 100px;
+    transition: left 0.5s ease;
+    cursor: pointer;
+
+}
+
+.navIconMove {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 308px;
+    margin-bottom: 100px;
+    transition: left 0.5s ease;
+    cursor: pointer;
+
+}
+
+
+.title {
+    background-color: #fdfbfb;
+    box-shadow: 1px 1px 1px;
+    width: 100%;
+    height: 50px;
+    padding: 1em;
+    box-sizing: border-box;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.defaultClass {
+    margin-top: 50px;
+}
+
+.connect {
+    padding: 5px 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.5s;
+}
+
+.connect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* 初始位置在左側屏幕外 */
+    width: 100%;
+    height: 100%;
+    background-color: #96d4f3;
+    /* 背景色 */
+    transition: left 0.4s ease;
+    /* 背景色滑動效果 */
+    z-index: -1;
+    /* 確保背景在文字和圖片之下 */
+}
+
+.connect:hover::before {
+    left: 0;
+    /* 當 hover 時，背景滑動進入可見區域 */
+}
+
+.connectName {
+    position: relative;
+    /* 讓文字正常疊加在滑動背景上 */
+    z-index: 2;
+    /* 確保文字位於背景之上 */
+}
+
+
+.connect a,
+.connect a:visited,
+.connect a:link,
+.connect a:active,
+.connect a:focus {
+    text-decoration: none;
+    color: #313d44;
+
+
+}
+
+.planImg,
+.doneImg,
+.clockImg {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+
+
+
+
+.rightSide {
+    width: 100%;
+    height: 100%;
+    transition: margin-left 0.5s ease;
+    margin-left: 300px;
+    background-color: #fffefb;
+    overflow-y: auto;
+}
+
+
+
+.rightSide.shifted {
+    margin-left: 25px;
+
+
+}
+
+.titleList {
+    display: flex;
+    width: 90%;
+    margin: 20px auto 40px auto;
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+
+
+
+
+ul {
+    list-style: none;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+
+
+.taskExpired {
+
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.today-Container,
+.tomorrow-Container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.addplan {
+
+    width: 100%;
+    display: flex;
+
+}
+
+.today,
+.tomorrow {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    flex-direction: column;
+
+}
+
+.taskExpired h3,
+.today h3,
+.tomorrow h3 {
+    margin-left: 15px;
+    display: flex;
+
+}
+
+.expire-count,
+.today-count,
+.tomorrow-count {
+    color: #888;
+    margin-left: 12px;
+    font-weight: 400;
+
+}
+
+
+.inputData {
+    width: 90%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: #c1c1c1 solid 1px;
+    border-radius: 10px;
+    background-color: #fffefb;
+    margin: 15px 10px;
+    box-shadow: -1px 1px 2px rgb(160, 160, 160);
+}
+
+
+.inputTask {
+    display: flex;
+    width: 90%;
+    margin: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    background-color: transparent
+}
+
+.inputTask::placeholder {
+    font-size: 9px;
+}
+
+.inputData:hover .inputTask::placeholder {
+    color: #dc4c3e
+}
+
+.alarms {
+    display: flex;
+    width: 90%;
+    margin: 0px 15px 15px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+}
+
+
+
+.alarm1,
+.alarm2,
+.alarm3,
+.alarm4,
+.alarm5,
+.alarm6,
+.alarm7,
+.alarm8,
+.alarm9,
+.alarm10 {
+
+    background-image: url(./images/alarm-clock.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+
+}
+
+
+
+#checkAlarm1:checked~.alarm1,
+#checkAlarm2:checked~.alarm2,
+#checkAlarm3:checked~.alarm3,
+#checkAlarm4:checked~.alarm4,
+#checkAlarm5:checked~.alarm5,
+#checkAlarm6:checked~.alarm6,
+#checkAlarm7:checked~.alarm7,
+#checkAlarm8:checked~.alarm8,
+#checkAlarm9:checked~.alarm9,
+#checkAlarm10:checked~.alarm10 {
+    background-image: url(./images/alarm-clock-click.png);
+}
+
+.listSection {
+
+    width: 100%;
+    display: flex;
+
+}
+
+
+.today-list,
+.tomorrow-list,
+.expired-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.today-list p,
+.tomorrow-list p {
+    margin-left: 15px;
+
+
+}
+
+.listData {
+    width: 90%;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    margin: 0px 10px;
+
+}
+
+.expired-list .listData {
+    margin: 0px 10px;
+
+
+}
+
+
+
+.listItem {
+    display: flex;
+    margin: 15px auto;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    min-width: 250px;
+    padding: 5px 20px;
+    border: #c1c1c1 solid 1px;
+    box-shadow: -1px 1px 2px rgb(160, 160, 160);
+    background-color: #fffefb;
+    border-left: 10px solid #d4eaf7;
+    overflow: hidden;
+
+}
+
+.expired-list .listItem {
+    background-color: #f5f4f1c5;
+
+
+}
+
+
+
+.listItem:hover {
+
+    box-shadow: -2px -1px 4px rgb(146, 146, 146);
+
+
+
+}
+
+.leftSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.taskLabel {
+    width: 80%;
+    word-break: break-all;
+    font-size: 20px;
+    vertical-align: top;
+
+}
+
+.hint1,
+.hint2 {
+    width: 90%;
+
+}
+
+
+
+.uncheckBtn {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+}
+
+.checkbtnImg {
+    background-image: url("./images/uncheck.png");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbtnImg:hover {
+    background-image: url("./images/check.png");
+}
+
+
+.noTaskSection {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.noTaskimg {
+    width: 150px;
+    height: 150px;
+}
+
+.alarm2 {
+    right: 180px;
+
+}
+
+.alarm3 {
+    right: 140px;
+
+}
+
+.alarm4 {
+    right: 100px;
+
+}
+
+.alarm5 {
+    right: 60px;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.alarmGroup {
+    display: flex;
+    width: 80%;
+    border-radius: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.alarm {
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+
+}
+
+
+
+.delete {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+
+.itemBox ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itemBox li {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+    nav {
+        left: -300px;
+        z-index: 10;
+    }
+
+    nav.hid {
+        left: 0px;
+    }
+
+    .rightSide {
+        margin-left: 25px;
+    }
+
+    .navIcon {
+        left: 308px;
+    }
+
+    .navIconMove {
+        left: 8px;
+    }
+
+
+
+    .title {
+        font-size: 28px;
+        min-width: 477px;
+    }
+
+    .main-container {
+        margin-left: 80px;
+
+    }
+
+    .titleList {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .main-container {
+        flex-wrap: wrap;
+    }
+
+    .taskExpired {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .today-Container,
+    .tomorrow-Container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
