@@ -16,7 +16,7 @@ const deleteMusic = document.querySelector(".deleteMusic");
 const currentTaskTitle = document.querySelector(".currentTaskTitle");
 let isPlaying = false;
 //計時器時間
-let time = 2;
+let time = 1500;
 //分鐘
 let m;
 //秒數
